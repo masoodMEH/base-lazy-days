@@ -1,8 +1,7 @@
 import { Box, Button, Flex, HStack, Icon, Link } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { GiFlowerPot } from "react-icons/gi";
-import { Link as RouterLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 import { useLoginData } from "@/auth/AuthContext";
 import { useAuthActions } from "@/auth/useAuthActions";
@@ -43,7 +42,7 @@ export function Navbar() {
             <Icon w={8} h={8} as={GiFlowerPot} />
           </NavLink>
           <HStack as="nav" spacing={4}>
-            {Links.map((link) => (
+            {Links?.map((link) => (
               <NavLink key={link} to={`/${link}`}>
                 {link}
               </NavLink>

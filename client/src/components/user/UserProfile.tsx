@@ -59,7 +59,7 @@ export function UserProfile() {
             }}
           >
             <Form>
-              {formElements.map((element) => (
+              {formElements?.map((element) => (
                 <FormControl key={element} id={element}>
                   <FormLabel>{element}</FormLabel>
                   <Field name={element} as={Input} />

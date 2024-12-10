@@ -25,7 +25,7 @@ export function DateBox({ date, gridColumn, appointments = [] }: DateBoxProps) {
         <Text fontSize="xs" textAlign="right">
           {date}
         </Text>
-        {appointments.map((appointment) => (
+        {appointments?.map((appointment) => (
           <Appointment key={appointment.id} appointmentData={appointment} />
         ))}
       </Stack>

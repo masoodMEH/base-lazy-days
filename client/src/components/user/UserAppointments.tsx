@@ -30,7 +30,7 @@ function AppointmentsTable({ userAppointments }: AppointmentsTableProps) {
   return (
     <Table variant="simple" m={10} maxWidth="500px">
       <Tbody>
-        {userAppointments.map((appointment) => (
+        {userAppointments?.map((appointment) => (
           <Tr key={appointment.id}>
             <Td>
               <Text>{dayjs(appointment.dateTime).format("MMM D")}</Text>

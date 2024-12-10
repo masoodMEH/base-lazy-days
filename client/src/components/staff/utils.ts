@@ -6,7 +6,7 @@ export function filterByTreatment(
 ): Staff[] {
   return staff.filter((person) =>
     person.treatmentNames
-      .map((t) => t.toLowerCase())
+      ?.map((t) => t.toLowerCase())
       .includes(treatmentName.toLowerCase())
   );
 }

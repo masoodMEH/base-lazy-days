@@ -60,7 +60,7 @@ export async function create(req: Request, res: Response): Promise<Response> {
   try {
     const { email, password } = req.body;
     const existingUsers = await db.getUsers();
-    const takenEmail = existingUsers.map((u) => u.email).includes(email);
+    const takenEmail = existingUsers?.map((u) => u.email).includes(email);
     if (takenEmail) {
       return res.status(400).json({ message: 'Email is already in use' });
     }

@@ -57,7 +57,7 @@ export function Calendar() {
           appointments={appointments[1]}
         />
         {/* the rest of the days will follow */}
-        {[...Array(monthYear.lastDate)].map((_, i) =>
+        {[...Array(monthYear.lastDate)]?.map((_, i) =>
           i > 0 ? (
             <DateBox key={i} date={i + 1} appointments={appointments[i + 1]} />
           ) : null
