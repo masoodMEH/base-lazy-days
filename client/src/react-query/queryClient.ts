@@ -1,5 +1,5 @@
 import { toast } from "@/components/app/toast";
-import { QueryClient } from "@tanstack/react-query";
+import { QueryCache, QueryClient } from "@tanstack/react-query";
 
 function errorHandler(errorMsg: string) {
   // https://chakra-ui.com/docs/components/toast#preventing-duplicate-toast
@@ -17,4 +17,10 @@ function errorHandler(errorMsg: string) {
   }
 }
 
-export const queryClient = new QueryClient();
+export const queryClient = new QueryClient({
+  queryCache: new QueryCache({
+    onError: (error) => {
+      errorHandler(error.message);
+    },
+  }),
+});
